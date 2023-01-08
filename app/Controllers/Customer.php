@@ -4,13 +4,13 @@ namespace App\Controllers;
 
 class Customer extends BaseController
 {
-    public function index()
+    public function dashboard()
     {
         $data=[
-            'page_title'=>'Home',
-            'page'=>'home'
+            'page_title'=>'Customer Dashboard',
+            'page'=>'dashboard'
         ];
 
-        return view('pages/home',$data);
+        return view('pages/users/customer/dashboard',$data);
     }
 }

@@ -11,6 +11,11 @@ class About extends BaseController
             'page'=>'about'
         ];
 
+        if(isset($_SESSION['type']))
+        $data['layout']='loggedin';
+        else
+        $data['layout']='nologin';
+        
         return view('pages/about',$data);
     }
 }

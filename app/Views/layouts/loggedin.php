@@ -14,7 +14,7 @@
                         <a class="nav-link <?= $page=="home"?"active":"" ?>" aria-current="page" href="/carrental">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?= $page=="login"?"active":"" ?>" href="/carrental/login">Login</a>
+                        <a class="nav-link <?= $page=="login"?"active":"" ?>" href="/carrental/login">Dashboard</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link <?= $page=="signup"?"active":"" ?>" href="/carrental/signup">Signup</a>

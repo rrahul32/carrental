@@ -8,6 +8,9 @@ class User extends BaseController
 {
     public function login()
     {
+        if(isset($_SESSION['type']))
+        return redirect()->to($_SESSION['type'].'/dashboard');
+
         helper('form');
         $data=[
             'page_title'=>'Login',
@@ -38,10 +41,7 @@ class User extends BaseController
             {
                 $model = new UserModel();
                 $user= $model->where(['email'=>$this->request->getVar('email'), 'type'=>$this->request->getVar('type')])->first();
-                if($user['type']=='customer')
-                return redirect()->to('customer/dashboard');
-                else if($user['type']=='agency')
-                return redirect()->to('agency/dashboard');
+                return redirect()->to($user['type'].'/dashboard');
             }
         }
 
@@ -50,6 +50,9 @@ class User extends BaseController
 
     public function signup()
     {
+        if(isset($_SESSION['type']))
+        return redirect()->to($_SESSION['type'].'/dashboard');
+        
         helper('form');
         $data=[
             'page_title'=>'Signup',

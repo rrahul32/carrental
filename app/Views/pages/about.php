@@ -1,6 +1,6 @@
-<?= $this->extend('layouts/nologin') ?>
+<?= $this->extend('layouts/'.$layout) ?>
 
-<?= $this->section('content') ?>
+<?= $this->section('mainContent') ?>
 
 <div class="container">
     <h1>About Me</h1>

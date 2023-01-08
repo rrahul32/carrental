@@ -1,6 +1,6 @@
 <?= $this->extend('layouts/nologin') ?>
 
-<?= $this->section('content') ?>
+<?= $this->section('mainContent') ?>
 <?= isset($post) ? print_r($post) : '' ?>
 <div class="col-10 col-sm-6 col-lg-4 border border-dark bg-white p-3 rounded-3">
     <h2 class="text-center mb-3">Login</h2>
