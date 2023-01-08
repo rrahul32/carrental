@@ -2,9 +2,9 @@
 
 use CodeIgniter\Model;
 
-class UserModel extends Model{
-    protected $table = 'users';
-    protected $allowedFields = ['fname', 'lname', 'email', 'password', 'type', 'updated_at'];
+class AgencyModel extends Model{
+    protected $table = 'agencies';
+    protected $allowedFields = ['name', 'email', 'password', 'city', 'updated_at'];
     protected $beforeInsert = ['beforeInsert'];
     protected $beforeUpdate = ['beforeUpdate'];
 

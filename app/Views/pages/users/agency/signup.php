@@ -1,19 +1,16 @@
 <?= $this->extend('layouts/nologin') ?>
 
 <?= $this->section('mainContent') ?>
+
 <div class="col-10 col-sm-6 col-lg-4 border border-dark bg-white p-3 rounded-3">
     <h2 class="text-center mb-3">Signup</h2>
-    <form action="/carrental/signup" method="post">
+    <form action="/carrental/agency/signup" method="post">
         <div class="form-floating mb-3">
-            <input type="text" name="fname" class="form-control" id="floatingFName" placeholder="name" value="<?= set_value('fname')?>"> 
-            <label for="floatingFName">First Name</label>
+            <input type="text" name="name" class="form-control" id="floatingName" placeholder="name" value="<?= set_value('name') ?>">
+            <label for="floatingFName">Name</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="text" name="lname" class="form-control" id="floatingLName" placeholder="name" value="<?= set_value('lname')?>">
-            <label for="floatingLName">Last Name</label>
-        </div>
-        <div class="form-floating mb-3">
-            <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com" value="<?= set_value('email')?>">
+            <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com" value="<?= set_value('email') ?>">
             <label for="floatingInput">Email address</label>
         </div>
         <div class="form-floating mb-3">
@@ -27,21 +24,21 @@
 
         <div class="row mb-3 align-items-center">
             <div class="col-auto ">
-                <label for="type">User Type:</label>
+                <label for="city">City:</label>
             </div>
             <div class="col">
-                <select name="type" class="form-select" id="type">
-                    <option value='customer' <?= set_select('type', 'customer', true) ?>>Customer</option>
-                    <option value="agency" <?= set_select('type', 'agency') ?>>Agency</option>
+                <select name="city" class="form-select" id="city">
+                    <?php foreach ($cities as $city):?>
+                        <option value=<?=$city?> <?= set_select('city',$city)?>><?=$city?></option>
+                        <?php endforeach ?>
                 </select>
             </div>
         </div>
-
-        <?php if(isset($validation)): ?>
+        <?php if (isset($validation)) : ?>
             <div class="text-danger">
                 <?= $validation->listErrors() ?>
             </div>
-            <?php endif ?>
+        <?php endif ?>
         <div class="row justify-content-center">
             <div class="col-3">
                 <button type="submit" class="btn btn-primary ">Signup</button>

@@ -29,3 +29,165 @@ in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
 11 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Signup))
 12 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
 13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-08 06:51:53 --> mysqli_sql_exception: Table 'carrental.employees' doesn't exist in C:\xampp\htdocs\carrental\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\carrental\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\carrental\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\carrental\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\carrental\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\carrental\app\Controllers\Agency.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\carrental\system\CodeIgniter.php(925): App\Controllers\Agency->signup()
+#6 C:\xampp\htdocs\carrental\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+#7 C:\xampp\htdocs\carrental\system\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\carrental\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-08 06:51:53 --> Table 'carrental.employees' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `employees`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `employees`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `employees`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `employees`', [], false)
+ 5 APPPATH\Controllers\Agency.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Agency->signup()
+ 7 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-08 06:59:45 --> Cannot use object of type stdClass as array
+in APPPATH\Views\pages\users\agency\signup.php on line 7.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/users/agency/signup', [], true)
+ 4 APPPATH\Controllers\Agency.php(85): view('pages/users/agency/signup', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Agency->signup()
+ 6 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-08 07:11:17 --> Invalid file: pages/signup.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/signup.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/signup', [], true)
+ 3 APPPATH\Controllers\User.php(117): view('pages/signup', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\User->signup()
+ 5 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-08 13:24:44 --> mysqli_sql_exception: Table 'carrental.users' doesn't exist in C:\xampp\htdocs\carrental\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\carrental\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\carrental\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\carrental\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\carrental\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\carrental\system\Validation\Rules.php(142): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\carrental\system\Validation\Validation.php(315): CodeIgniter\Validation\Rules->is_unique('lyhujyha@mailin...', 'email', Array, NULL, 'email')
+#6 C:\xampp\htdocs\carrental\system\Validation\Validation.php(175): CodeIgniter\Validation\Validation->processRules('email', 'Email Address', 'lyhujyha@mailin...', Array, Array)
+#7 C:\xampp\htdocs\carrental\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\carrental\app\Controllers\User.php(95): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\carrental\system\CodeIgniter.php(925): App\Controllers\User->signup()
+#10 C:\xampp\htdocs\carrental\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#11 C:\xampp\htdocs\carrental\system\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\carrental\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2023-01-08 13:24:44 --> Table 'carrental.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 1
+FROM `users`
+WHERE `email` = \'lyhujyha@mailinator.com\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'lyhujyha@mailinator.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'lyhujyha@mailinator.com\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Validation\Rules.php(142): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\Validation\Validation.php(315): CodeIgniter\Validation\Rules->is_unique('lyhujyha@mailinator.com', 'email', [...], null, 'email')
+ 7 SYSTEMPATH\Validation\Validation.php(175): CodeIgniter\Validation\Validation->processRules('email', 'Email Address', 'lyhujyha@mailinator.com', [...], [...])
+ 8 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 9 APPPATH\Controllers\User.php(95): CodeIgniter\Controller->validate([...])
+10 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\User->signup()
+11 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+12 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-08 13:28:27 --> Invalid file: pages/signup.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/signup.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/signup', [], true)
+ 3 APPPATH\Controllers\User.php(117): view('pages/signup', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\User->signup()
+ 5 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 6 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-08 13:29:25 --> mysqli_sql_exception: Table 'carrental.users' doesn't exist in C:\xampp\htdocs\carrental\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\carrental\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 C:\xampp\htdocs\carrental\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 C:\xampp\htdocs\carrental\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 C:\xampp\htdocs\carrental\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\carrental\system\Validation\Rules.php(142): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\carrental\system\Validation\Validation.php(315): CodeIgniter\Validation\Rules->is_unique('lyqytitegu@mail...', 'email', Array, NULL, 'email')
+#6 C:\xampp\htdocs\carrental\system\Validation\Validation.php(175): CodeIgniter\Validation\Validation->processRules('email', 'Email Address', 'lyqytitegu@mail...', Array, Array)
+#7 C:\xampp\htdocs\carrental\system\Controller.php(140): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\carrental\app\Controllers\User.php(95): CodeIgniter\Controller->validate(Array)
+#9 C:\xampp\htdocs\carrental\system\CodeIgniter.php(925): App\Controllers\User->signup()
+#10 C:\xampp\htdocs\carrental\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#11 C:\xampp\htdocs\carrental\system\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\carrental\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2023-01-08 13:29:25 --> Table 'carrental.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT 1
+FROM `users`
+WHERE `email` = \'lyqytitegu@mailinator.com\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `users`
+WHERE `email` = \'lyqytitegu@mailinator.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `users`
+WHERE `email` = \'lyqytitegu@mailinator.com\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Validation\Rules.php(142): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\Validation\Validation.php(315): CodeIgniter\Validation\Rules->is_unique('lyqytitegu@mailinator.com', 'email', [...], null, 'email')
+ 7 SYSTEMPATH\Validation\Validation.php(175): CodeIgniter\Validation\Validation->processRules('email', 'Email Address', 'lyqytitegu@mailinator.com', [...], [...])
+ 8 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 9 APPPATH\Controllers\User.php(95): CodeIgniter\Controller->validate([...])
+10 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\User->signup()
+11 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+12 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-08 13:37:35 --> Undefined variable $city_list
+in APPPATH\Views\pages\users\agency\signup.php on line 31.
+ 1 APPPATH\Views\pages\users\agency\signup.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $city_list', 'APPPATH\\Views\\pages\\users\\agency\\signup.php', 31)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\users\\agency\\signup.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/users/agency/signup', [], true)
+ 5 APPPATH\Controllers\Agency.php(84): view('pages/users/agency/signup', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Agency->signup()
+ 7 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-08 14:00:32 --> Class "App\Models\UserModel" not found
+in APPPATH\Validations\UserRules.php on line 8.
+ 1 SYSTEMPATH\Validation\Validation.php(315): App\Validations\UserRules->validateUser('12345678', 'email,password,type', [...], null, 'password')
+ 2 SYSTEMPATH\Validation\Validation.php(175): CodeIgniter\Validation\Validation->processRules('password', 'Password', '12345678', [...], [...])
+ 3 SYSTEMPATH\Controller.php(140): CodeIgniter\Validation\Validation->run()
+ 4 APPPATH\Controllers\User.php(39): CodeIgniter\Controller->validate([...])
+ 5 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\User->login()
+ 6 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

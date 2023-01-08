@@ -1,12 +1,17 @@
 <?php
 namespace App\Validations;
-use App\Models\UserModel;
+use App\Models\AgencyModel;
+use App\Models\CustomerModel;
 
 class UserRules{
     public function  validateUser(string $str,string $fields, array $data, ?string &$error = null): bool
     {
-        $model = new UserModel();
-        $user = $model->where(['email'=>$data['email'], 'type'=>$data['type']])->first();
+        if($data['type']=='agency')
+        $model = new AgencyModel();
+        else if($data['type']=='customer')
+        $model = new CustomerModel();
+
+        $user = $model->where('email',$data['email'])->first();
         if(!$user)
         {
             $error = "Please signup first!";

@@ -37,9 +37,18 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('about/', 'About::index');
-$routes->get('customer/dashboard/', 'Customer::dashboard');
-$routes->get('agency/dashboard/', 'Agency::dashboard');
-// $routes->get('login/', 'Login::index');
+$routes->get('logout/', 'User::logout');
+$routes->group('customer',static function ($routes){
+    $routes->get('dashboard/', 'Customer::dashboard');
+    $routes->match(['get','post'],'signup/', 'Customer::signup');
+    $routes->addRedirect('/', 'dashboard/');
+});
+$routes->group('agency',static function ($routes){
+    $routes->get('dashboard/', 'Agency::dashboard');
+    $routes->match(['get','post'],'signup/', 'Agency::signup');
+    $routes->addRedirect('/', 'dashboard/');
+});
+// $routes-addRedirect>get('login/', 'Login::index');
 $routes->match(['get','post'],'login/','User::login');
 $routes->match(['get','post'],'signup/','User::signup');
 /*
