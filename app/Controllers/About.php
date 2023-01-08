@@ -11,8 +11,8 @@ class About extends BaseController
             'page'=>'about'
         ];
 
-        if(isset($_SESSION['type']))
-        $data['layout']='loggedin';
+        if(session()->get('isLoggedIn'))
+        $data['layout']=session()->get('type');
         else
         $data['layout']='nologin';
         

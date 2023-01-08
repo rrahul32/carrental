@@ -11,8 +11,8 @@ class Home extends BaseController
             'page'=>'home',
         ];
 
-        if(isset($_SESSION['type']))
-        $data['layout']='loggedin';
+        if(session()->get('isLoggedIn'))
+        $data['layout']=session()->get('type');
         else
         $data['layout']='nologin';
 

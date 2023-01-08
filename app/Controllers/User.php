@@ -8,8 +8,8 @@ class User extends BaseController
 {
     public function login()
     {
-        if(isset($_SESSION['type']))
-        return redirect()->to($_SESSION['type'].'/dashboard');
+        if(session()->get('isLoggedIn'))
+        return redirect()->to(session()->get('type').'/dashboard');
 
         helper('form');
         $data=[
@@ -41,6 +41,7 @@ class User extends BaseController
             {
                 $model = new UserModel();
                 $user= $model->where(['email'=>$this->request->getVar('email'), 'type'=>$this->request->getVar('type')])->first();
+                $this->setUserSession($user);
                 return redirect()->to($user['type'].'/dashboard');
             }
         }
@@ -50,9 +51,9 @@ class User extends BaseController
 
     public function signup()
     {
-        if(isset($_SESSION['type']))
-        return redirect()->to($_SESSION['type'].'/dashboard');
-        
+        if(session()->get('isLoggedIn'))
+        return redirect()->to(session()->get('type').'/dashboard');
+
         helper('form');
         $data=[
             'page_title'=>'Signup',
@@ -114,6 +115,19 @@ class User extends BaseController
 
 
         return view('pages/signup',$data);
+    }
+
+    private function setUserSession($user){
+        $data=[
+            'id'=>$user['id'],
+            'fname'=>$user['fname'],
+            'lname'=>$user['lname'],
+            'email'=>$user['email'],
+            'type'=>$user['type'],
+            'isLoggedIn'=>true,
+        ];
+        session()->set($data);
+        return true;
     }
 
 }
