@@ -4,7 +4,7 @@ use CodeIgniter\Model;
 
 class AgencyModel extends Model{
     protected $table = 'agencies';
-    protected $allowedFields = ['name', 'email', 'password', 'city', 'updated_at'];
+    protected $allowedFields = ['name', 'email', 'password', 'city'];
     protected $beforeInsert = ['beforeInsert'];
     protected $beforeUpdate = ['beforeUpdate'];
 

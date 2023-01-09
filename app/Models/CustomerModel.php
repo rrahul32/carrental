@@ -4,7 +4,7 @@ use CodeIgniter\Model;
 
 class CustomerModel extends Model{
     protected $table = 'customers';
-    protected $allowedFields = ['fname', 'lname', 'email', 'password', 'city', 'updated_at'];
+    protected $allowedFields = ['fname', 'lname', 'email', 'password', 'city'];
     protected $beforeInsert = ['beforeInsert'];
     protected $beforeUpdate = ['beforeUpdate'];
 

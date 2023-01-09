@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\CustomerModel;
+
 class Customer extends BaseController
 {
     public function dashboard()
@@ -20,10 +22,17 @@ class Customer extends BaseController
         return redirect()->to(session()->get('type').'/dashboard');
 
         helper('form');
+        $cities= db_connect()->table('rental_cities')->select('city')->get()->getResultArray();
+        $city_list=[];
+        foreach($cities as $city){
+            $city_list[]=$city['city'];
+        }
         $data=[
-            'page_title'=>'Signup',
+            'page_title'=>'Customer Signup',
             'page'=>'signup',
+            'cities'=>$city_list,
         ];
+
         if($this->request->getMethod()=='post')
         {
             $rules = [
@@ -36,7 +45,7 @@ class Customer extends BaseController
                     'label'=> 'Last Name'
                 ],
                 'email'=>[
-                    'rules'=>'required|min_length[6]|max_length[50]|valid_email|is_unique[users.email]',
+                    'rules'=>'required|min_length[6]|max_length[50]|valid_email|is_unique[customers.email]',
                     'label' => 'Email Address'
                 ],
                 'password'=>[
@@ -49,10 +58,10 @@ class Customer extends BaseController
                         'matches'=> 'Passwords do not match.'
                     ]
                 ],
-                'type'=> [
-                    'rules'=>'in_list[customer, agency]',
+                'city'=> [
+                    'rules'=>'in_list['.implode(",",$city_list).']',
                     'errors' => [
-                        'in_list'=> 'User type should be either Customer or Agency.'
+                        'in_list'=> 'Please select a city from the list'
                     ]
                 ],
             ];
@@ -61,13 +70,13 @@ class Customer extends BaseController
             $data['validation'] = $this->validator;
             else
             {
-                //$model = new UseModel();
+                $model = new CustomerModel();
                 $userData = [
                     'fname' => $this->request->getVar('fname'),
                     'lname' => $this->request->getVar('lname'),
                     'email' => $this->request->getVar('email'),
                     'password' => $this->request->getVar('password'),
-                    'type' => $this->request->getVar('type'),
+                    'city' => $this->request->getVar('city'),
                 ];
 
                 $model->save($userData);
@@ -79,6 +88,6 @@ class Customer extends BaseController
         }
 
 
-        return view('pages/signup',$data);
+        return view('pages/users/customer/signup',$data);
     }
 }

@@ -39,14 +39,13 @@ $routes->get('/', 'Home::index');
 $routes->get('about/', 'About::index');
 $routes->get('logout/', 'User::logout');
 $routes->group('customer',static function ($routes){
-    $routes->get('dashboard/', 'Customer::dashboard');
+    $routes->get('/', 'Home::index');
     $routes->match(['get','post'],'signup/', 'Customer::signup');
-    $routes->addRedirect('/', 'dashboard/');
 });
 $routes->group('agency',static function ($routes){
-    $routes->get('dashboard/', 'Agency::dashboard');
+    $routes->get('/', 'Home::index');
+    $routes->match(['get','post'],'addcar/', 'Agency::addCar');
     $routes->match(['get','post'],'signup/', 'Agency::signup');
-    $routes->addRedirect('/', 'dashboard/');
 });
 // $routes-addRedirect>get('login/', 'Login::index');
 $routes->match(['get','post'],'login/','User::login');

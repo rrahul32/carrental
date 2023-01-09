@@ -5,11 +5,26 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="/carrental/public/assets/css/styles.css"> -->
+
+    <style>
+        #root {
+    min-height: 100vh;
+}
+
+#logo-text {
+    font-size: 3rem;
+    font-weight:600 ;
+    /* background-image: linear-gradient(to right, #000, #120, #111);  */
+    color: transparent;
+    background-image: linear-gradient(45deg, #6f42c1, #af4261);
+    background-clip: text;
+}
+    </style>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="/carrental/public/assets/css/styles.css">
     <title><?= esc($page_title) ?></title>
 </head>
 
@@ -19,8 +34,8 @@
     <?= $this->renderSection('content') ?>
     
     <!-- footer -->
-    <footer class="d-flex bg-dark mt-3">
-        <div class="container">
+    <footer class="d-flex mt-3 bg-dark">
+        <div class="container ">
             <div class="row justify-content-between align-items-center py-3">
                 <div class="col-md-4 d-flex align-items-center">
                     <span class="text-muted">© 2023 </span>

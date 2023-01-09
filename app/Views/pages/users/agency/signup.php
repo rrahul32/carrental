@@ -7,7 +7,7 @@
     <form action="/carrental/agency/signup" method="post">
         <div class="form-floating mb-3">
             <input type="text" name="name" class="form-control" id="floatingName" placeholder="name" value="<?= set_value('name') ?>">
-            <label for="floatingFName">Name</label>
+            <label for="floatingName">Name</label>
         </div>
         <div class="form-floating mb-3">
             <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com" value="<?= set_value('email') ?>">

@@ -11,7 +11,6 @@
                     Registration successful!<br>
                     Please login to continue. 
                 </p>
-                
         </div>
         <?php endif?>
     <form action="/carrental/login" method="post">

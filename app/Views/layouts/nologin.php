@@ -35,9 +35,10 @@
     </div>
 </nav>
 <!-- navbar end -->
-
-<main class="row align-items-center justify-content-center">
-    <?= $this->renderSection('mainContent') ?>
-</main>
+<div class="col">
+    <main class="d-flex align-items-center justify-content-center">
+        <?= $this->renderSection('mainContent') ?>
+    </main>
+</div>
 
 <?= $this->endSection() ?>

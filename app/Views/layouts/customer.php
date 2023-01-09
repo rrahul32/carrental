@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 <!-- navbar -->
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-3">
+<nav class="navbar navbar-expand-sm navbar-dark mb-3 bg-dark">
     <div class="container">
         <a class="navbar-brand" href="/carrental">Rent a Car</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,9 +27,10 @@
         </div>
     </nav>
     <!-- navbar end -->
-    
-    <main class="row align-items-center justify-content-center">
-        <?= $this->renderSection('mainContent') ?>
-    </main>
+    <div class="col">
+        <main class="d-flex align-items-center justify-content-center">
+            <?= $this->renderSection('mainContent') ?>
+        </main>
+    </div>
     
         <?= $this->endSection() ?>

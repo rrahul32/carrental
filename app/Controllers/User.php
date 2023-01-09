@@ -52,7 +52,7 @@ class User extends BaseController
                 $user= $model->where('email',$this->request->getVar('email'))->first();
                 $this->setUserSession($user,$this->request->getVar('type'));
 
-                return redirect()->to($this->request->getVar('type').'/dashboard');
+                return redirect()->to($this->request->getVar('type').'/');
                 // echo $this->request->getVar('type');
                 // exit();
             }
@@ -62,6 +62,12 @@ class User extends BaseController
     }
 
     private function setUserSession($user,$type){
+        $data=[
+            'id'=>$user['id'],
+            'email'=>$user['email'],
+            'type'=>$type,
+            'isLoggedIn'=>true,
+        ];
         if($type=='customer')
         {
             $data['fname']=$user['fname'];
@@ -69,20 +75,14 @@ class User extends BaseController
         }
         else if($type=='agency')
         $data['name']=$user['name'];
-        $data=[
-            'id'=>$user['id'],
-            'email'=>$user['email'],
-            'type'=>$type,
-            'isLoggedIn'=>true,
-        ];
+        
         session()->set($data);
         return true;
     }
 
     public function logout(){
-        $type=session()->get('type');
         session()->destroy();
-        return redirect()->to($type.'/login');
+        return redirect()->to('login/');
     }
 
 }

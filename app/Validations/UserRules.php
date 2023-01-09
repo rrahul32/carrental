@@ -23,7 +23,15 @@ class UserRules{
             return false;
         }
         return true;
+    }
 
+    public function  validateStartDate(string $str,?string &$error = null): bool
+    {
+        // $year = (int) substr($str,0,4);
+        // $month = (int) substr($str,5,2);
+        // $year = (int) substr($str,8,2);
+        $error = 'Please select a date greater than today.';
+        return $str>date('Y-m-d');
     }
 }
 
