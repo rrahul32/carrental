@@ -49,7 +49,7 @@
         <?php endif ?>
         <div class="row justify-content-center">
             <div class="col-3">
-                <button type="submit" class="btn btn-primary ">Signup</button>
+                <button type="submit" class="btn btn-primary ">Add Car</button>
             </div>
         </div>
     </form>

@@ -18,7 +18,6 @@
       <th scope="col">Start Date</th>
       <th scope="col">No of Days</th>
       <th scope="col">Rent</th>
-      <th scope="col">Status</th>
     </tr>
   </thead>
   <tbody>
@@ -34,10 +33,6 @@
       <td><?=$booking['from_date']?></td>
       <td><?=$booking['no_of_days']?></td>
       <td>&#8377;<?=$booking['rent']?></td>
-      <td><?php 
-      $status=db_connect()->query("SELECT `status` FROM `invoice` WHERE `rental_id`=$booking[id]")->getRow();
-      echo $status['status'];
-      ?></td>
     </tr>
     <?php endforeach ?>
   </tbody>

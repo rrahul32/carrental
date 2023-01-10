@@ -234,3 +234,182 @@ in APPPATH\Views\pages\users\agency\viewcars.php on line 48.
  7 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
  8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-10 08:13:43 --> mysqli_sql_exception: Table 'carrental.invoice' doesn't exist in C:\xampp\htdocs\carrental\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\carrental\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `status`...', 0)
+#1 C:\xampp\htdocs\carrental\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `status`...')
+#2 C:\xampp\htdocs\carrental\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `status`...')
+#3 C:\xampp\htdocs\carrental\app\Views\pages\users\agency\bookings.php(38): CodeIgniter\Database\BaseConnection->query('SELECT `status`...')
+#4 C:\xampp\htdocs\carrental\system\View\View.php(213): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\carrental\system\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#6 C:\xampp\htdocs\carrental\system\Common.php(1135): CodeIgniter\View\View->render('pages/users/age...', Array, true)
+#7 C:\xampp\htdocs\carrental\app\Controllers\Agency.php(164): view('pages/users/age...', Array)
+#8 C:\xampp\htdocs\carrental\system\CodeIgniter.php(925): App\Controllers\Agency->bookings()
+#9 C:\xampp\htdocs\carrental\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+#10 C:\xampp\htdocs\carrental\system\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\carrental\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-01-10 08:13:43 --> Call to a member function getRow() on bool
+in APPPATH\Views\pages\users\agency\bookings.php on line 38.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/users/agency/bookings', [], true)
+ 4 APPPATH\Controllers\Agency.php(164): view('pages/users/agency/bookings', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Agency->bookings()
+ 6 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-10 08:13:51 --> mysqli_sql_exception: Table 'carrental.invoice' doesn't exist in C:\xampp\htdocs\carrental\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\carrental\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `status`...', 0)
+#1 C:\xampp\htdocs\carrental\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `status`...')
+#2 C:\xampp\htdocs\carrental\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `status`...')
+#3 C:\xampp\htdocs\carrental\app\Views\pages\users\agency\bookings.php(38): CodeIgniter\Database\BaseConnection->query('SELECT `status`...')
+#4 C:\xampp\htdocs\carrental\system\View\View.php(213): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\carrental\system\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#6 C:\xampp\htdocs\carrental\system\Common.php(1135): CodeIgniter\View\View->render('pages/users/age...', Array, true)
+#7 C:\xampp\htdocs\carrental\app\Controllers\Agency.php(164): view('pages/users/age...', Array)
+#8 C:\xampp\htdocs\carrental\system\CodeIgniter.php(925): App\Controllers\Agency->bookings()
+#9 C:\xampp\htdocs\carrental\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+#10 C:\xampp\htdocs\carrental\system\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\carrental\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-01-10 08:13:51 --> Call to a member function getRow() on bool
+in APPPATH\Views\pages\users\agency\bookings.php on line 38.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/users/agency/bookings', [], true)
+ 4 APPPATH\Controllers\Agency.php(164): view('pages/users/agency/bookings', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Agency->bookings()
+ 6 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-10 08:14:11 --> mysqli_sql_exception: Table 'carrental.invoice' doesn't exist in C:\xampp\htdocs\carrental\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\carrental\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `status`...', 0)
+#1 C:\xampp\htdocs\carrental\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `status`...')
+#2 C:\xampp\htdocs\carrental\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `status`...')
+#3 C:\xampp\htdocs\carrental\app\Views\pages\users\agency\bookings.php(38): CodeIgniter\Database\BaseConnection->query('SELECT `status`...')
+#4 C:\xampp\htdocs\carrental\system\View\View.php(213): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\carrental\system\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#6 C:\xampp\htdocs\carrental\system\Common.php(1135): CodeIgniter\View\View->render('pages/users/age...', Array, true)
+#7 C:\xampp\htdocs\carrental\app\Controllers\Agency.php(164): view('pages/users/age...', Array)
+#8 C:\xampp\htdocs\carrental\system\CodeIgniter.php(925): App\Controllers\Agency->bookings()
+#9 C:\xampp\htdocs\carrental\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+#10 C:\xampp\htdocs\carrental\system\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\carrental\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-01-10 08:14:11 --> Call to a member function getRow() on bool
+in APPPATH\Views\pages\users\agency\bookings.php on line 38.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/users/agency/bookings', [], true)
+ 4 APPPATH\Controllers\Agency.php(164): view('pages/users/agency/bookings', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Agency->bookings()
+ 6 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-10 08:17:42 --> mysqli_sql_exception: Table 'carrental.invoice' doesn't exist in C:\xampp\htdocs\carrental\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\carrental\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `status`...', 0)
+#1 C:\xampp\htdocs\carrental\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `status`...')
+#2 C:\xampp\htdocs\carrental\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `status`...')
+#3 C:\xampp\htdocs\carrental\app\Views\pages\users\agency\bookings.php(38): CodeIgniter\Database\BaseConnection->query('SELECT `status`...')
+#4 C:\xampp\htdocs\carrental\system\View\View.php(213): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\carrental\system\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#6 C:\xampp\htdocs\carrental\system\Common.php(1135): CodeIgniter\View\View->render('pages/users/age...', Array, true)
+#7 C:\xampp\htdocs\carrental\app\Controllers\Agency.php(164): view('pages/users/age...', Array)
+#8 C:\xampp\htdocs\carrental\system\CodeIgniter.php(925): App\Controllers\Agency->bookings()
+#9 C:\xampp\htdocs\carrental\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+#10 C:\xampp\htdocs\carrental\system\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\carrental\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-01-10 08:17:42 --> Call to a member function getRow() on bool
+in APPPATH\Views\pages\users\agency\bookings.php on line 38.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/users/agency/bookings', [], true)
+ 4 APPPATH\Controllers\Agency.php(164): view('pages/users/agency/bookings', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Agency->bookings()
+ 6 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-10 08:17:47 --> mysqli_sql_exception: Table 'carrental.invoice' doesn't exist in C:\xampp\htdocs\carrental\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\carrental\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `status`...', 0)
+#1 C:\xampp\htdocs\carrental\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `status`...')
+#2 C:\xampp\htdocs\carrental\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `status`...')
+#3 C:\xampp\htdocs\carrental\app\Views\pages\users\agency\bookings.php(38): CodeIgniter\Database\BaseConnection->query('SELECT `status`...')
+#4 C:\xampp\htdocs\carrental\system\View\View.php(213): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\carrental\system\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#6 C:\xampp\htdocs\carrental\system\Common.php(1135): CodeIgniter\View\View->render('pages/users/age...', Array, true)
+#7 C:\xampp\htdocs\carrental\app\Controllers\Agency.php(164): view('pages/users/age...', Array)
+#8 C:\xampp\htdocs\carrental\system\CodeIgniter.php(925): App\Controllers\Agency->bookings()
+#9 C:\xampp\htdocs\carrental\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+#10 C:\xampp\htdocs\carrental\system\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\carrental\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-01-10 08:17:47 --> Call to a member function getRow() on bool
+in APPPATH\Views\pages\users\agency\bookings.php on line 38.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/users/agency/bookings', [], true)
+ 4 APPPATH\Controllers\Agency.php(164): view('pages/users/agency/bookings', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Agency->bookings()
+ 6 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-10 08:17:58 --> mysqli_sql_exception: Table 'carrental.invoice' doesn't exist in C:\xampp\htdocs\carrental\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\carrental\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `status`...', 0)
+#1 C:\xampp\htdocs\carrental\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `status`...')
+#2 C:\xampp\htdocs\carrental\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `status`...')
+#3 C:\xampp\htdocs\carrental\app\Views\pages\users\agency\bookings.php(38): CodeIgniter\Database\BaseConnection->query('SELECT `status`...')
+#4 C:\xampp\htdocs\carrental\system\View\View.php(213): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\carrental\system\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#6 C:\xampp\htdocs\carrental\system\Common.php(1135): CodeIgniter\View\View->render('pages/users/age...', Array, true)
+#7 C:\xampp\htdocs\carrental\app\Controllers\Agency.php(164): view('pages/users/age...', Array)
+#8 C:\xampp\htdocs\carrental\system\CodeIgniter.php(925): App\Controllers\Agency->bookings()
+#9 C:\xampp\htdocs\carrental\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+#10 C:\xampp\htdocs\carrental\system\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\carrental\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-01-10 08:17:58 --> Call to a member function getRow() on bool
+in APPPATH\Views\pages\users\agency\bookings.php on line 38.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/users/agency/bookings', [], true)
+ 4 APPPATH\Controllers\Agency.php(164): view('pages/users/agency/bookings', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Agency->bookings()
+ 6 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-10 08:18:25 --> mysqli_sql_exception: Table 'carrental.invoice' doesn't exist in C:\xampp\htdocs\carrental\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\carrental\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `status`...', 0)
+#1 C:\xampp\htdocs\carrental\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `status`...')
+#2 C:\xampp\htdocs\carrental\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `status`...')
+#3 C:\xampp\htdocs\carrental\app\Views\pages\users\agency\bookings.php(38): CodeIgniter\Database\BaseConnection->query('SELECT `status`...')
+#4 C:\xampp\htdocs\carrental\system\View\View.php(213): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\carrental\system\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#6 C:\xampp\htdocs\carrental\system\Common.php(1135): CodeIgniter\View\View->render('pages/users/age...', Array, true)
+#7 C:\xampp\htdocs\carrental\app\Controllers\Agency.php(164): view('pages/users/age...', Array)
+#8 C:\xampp\htdocs\carrental\system\CodeIgniter.php(925): App\Controllers\Agency->bookings()
+#9 C:\xampp\htdocs\carrental\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+#10 C:\xampp\htdocs\carrental\system\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\carrental\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-01-10 08:18:25 --> Table 'carrental.invoice' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `status` FROM `invoice` WHERE `rental_id`=6', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `status` FROM `invoice` WHERE `rental_id`=6')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `status` FROM `invoice` WHERE `rental_id`=6')
+ 4 APPPATH\Views\pages\users\agency\bookings.php(38): CodeIgniter\Database\BaseConnection->query('SELECT `status` FROM `invoice` WHERE `rental_id`=6')
+ 5 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\users\\agency\\bookings.php')
+ 6 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/users/agency/bookings', [], true)
+ 8 APPPATH\Controllers\Agency.php(164): view('pages/users/agency/bookings', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Agency->bookings()
+10 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+11 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
