@@ -73,7 +73,7 @@
                         </div>
                     </form>
                     <?php endif ?>
-                    <?php if(!isset($_SESSION['isLogged'])):?>
+                    <?php if(!isset($_SESSION['isLoggedIn'])):?>
                         <div class="row justify-content-center">
                             <a href="/login" role="button" type="submit" class="btn btn-primary" onclick="return confirm('Please login as customer to rent car.')">
                                 Rent Car

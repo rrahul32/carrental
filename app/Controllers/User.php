@@ -10,7 +10,7 @@ class User extends BaseController
     public function login()
     {
         if(session()->get('isLoggedIn'))
-        return redirect()->to(session()->get('type').'/dashboard');
+        return redirect()->to(session()->get('type').'/');
 
         helper('form');
         $data=[

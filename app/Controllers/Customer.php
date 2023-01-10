@@ -23,7 +23,7 @@ class Customer extends BaseController
     public function signup()
     {
         if(session()->get('isLoggedIn'))
-        return redirect()->to(session()->get('type').'/dashboard');
+        return redirect()->to(session()->get('type').'/');
 
         helper('form');
         $cities= db_connect()->table('rental_cities')->select('city')->get()->getResultArray();
