@@ -1,0 +1,236 @@
+ERROR - 2023-01-10 00:19:29 --> mysqli_sql_exception: Unknown column 'car_id' in 'where clause' in C:\xampp\htdocs\carrental\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\carrental\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\carrental\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\carrental\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\carrental\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\carrental\system\Model.php(805): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\carrental\app\Controllers\Agency.php(139): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\carrental\system\CodeIgniter.php(925): App\Controllers\Agency->viewCars()
+#7 C:\xampp\htdocs\carrental\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+#8 C:\xampp\htdocs\carrental\system\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\carrental\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-01-10 00:19:29 --> Unknown column 'car_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `cars`
+WHERE `car_id` = \'4\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `cars`
+WHERE `car_id` = \'4\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `cars`
+WHERE `car_id` = \'4\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `cars`
+WHERE `car_id` = :car_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(805): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Agency.php(139): CodeIgniter\Model->__call('get', [])
+ 7 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Agency->viewCars()
+ 8 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-10 00:20:13 --> count(): Argument #1 ($value) must be of type Countable|array, null given
+in APPPATH\Views\pages\users\agency\viewcars.php on line 56.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/users/agency/viewcars', [], true)
+ 4 APPPATH\Controllers\Agency.php(151): view('pages/users/agency/viewcars', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Agency->viewCars()
+ 6 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-10 00:27:49 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':0:' at line 4 in C:\xampp\htdocs\carrental\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\carrental\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\carrental\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\carrental\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\carrental\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\carrental\system\Model.php(805): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\carrental\app\Controllers\Agency.php(140): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\carrental\system\CodeIgniter.php(925): App\Controllers\Agency->viewCars()
+#7 C:\xampp\htdocs\carrental\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+#8 C:\xampp\htdocs\carrental\system\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\carrental\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-01-10 00:27:49 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':0:' at line 4
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `cars`
+WHERE `agency_id` IS NULL
+AND 0 = :0:', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `cars`
+WHERE `agency_id` IS NULL
+AND 0 = :0:')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `cars`
+WHERE `agency_id` IS NULL
+AND 0 = :0:')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `cars`
+WHERE `agency_id` IS NULL
+AND 0 = :0:', [...], false)
+ 5 SYSTEMPATH\Model.php(805): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Agency.php(140): CodeIgniter\Model->__call('get', [])
+ 7 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Agency->viewCars()
+ 8 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+ 9 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-10 01:44:01 --> mysqli_sql_exception: Unknown column 'customer.id' in 'on clause' in C:\xampp\htdocs\carrental\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\carrental\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `no_of_d...', 0)
+#1 C:\xampp\htdocs\carrental\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `no_of_d...')
+#2 C:\xampp\htdocs\carrental\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `no_of_d...')
+#3 C:\xampp\htdocs\carrental\app\Controllers\Agency.php(156): CodeIgniter\Database\BaseConnection->query('SELECT `no_of_d...')
+#4 C:\xampp\htdocs\carrental\system\CodeIgniter.php(925): App\Controllers\Agency->bookings()
+#5 C:\xampp\htdocs\carrental\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+#6 C:\xampp\htdocs\carrental\system\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\carrental\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-01-10 01:44:02 --> Unknown column 'customer.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `no_of_days`, `from_date`, `rent`, `model`, `number`, `fname`, `lname`, `customers`.`email` FROM `rentals` JOIN `cars` ON `rentals`.`car_id`=`cars`.`id` JOIN `customers` ON `rentals`.`customer_id`=`customer`.`id` ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `no_of_days`, `from_date`, `rent`, `model`, `number`, `fname`, `lname`, `customers`.`email` FROM `rentals` JOIN `cars` ON `rentals`.`car_id`=`cars`.`id` JOIN `customers` ON `rentals`.`customer_id`=`customer`.`id` ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `no_of_days`, `from_date`, `rent`, `model`, `number`, `fname`, `lname`, `customers`.`email` FROM `rentals` JOIN `cars` ON `rentals`.`car_id`=`cars`.`id` JOIN `customers` ON `rentals`.`customer_id`=`customer`.`id` ')
+ 4 APPPATH\Controllers\Agency.php(156): CodeIgniter\Database\BaseConnection->query('SELECT `no_of_days`, `from_date`, `rent`, `model`, `number`, `fname`, `lname`, `customers`.`email` FROM `rentals` JOIN `cars` ON `rentals`.`car_id`=`cars`.`id` JOIN `customers` ON `rentals`.`customer_id`=`customer`.`id` ')
+ 5 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Agency->bookings()
+ 6 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-10 02:05:45 --> mysqli_sql_exception: Column 'id' in field list is ambiguous in C:\xampp\htdocs\carrental\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\carrental\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `id`,`no...', 0)
+#1 C:\xampp\htdocs\carrental\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`,`no...')
+#2 C:\xampp\htdocs\carrental\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`,`no...')
+#3 C:\xampp\htdocs\carrental\app\Controllers\Agency.php(156): CodeIgniter\Database\BaseConnection->query('SELECT `id`,`no...')
+#4 C:\xampp\htdocs\carrental\system\CodeIgniter.php(925): App\Controllers\Agency->bookings()
+#5 C:\xampp\htdocs\carrental\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+#6 C:\xampp\htdocs\carrental\system\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\carrental\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-01-10 02:05:45 --> Column 'id' in field list is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `id`,`no_of_days`, `from_date`, `rent`, `model`, `number`, `fname`, `lname`, `customers`.`email` AS email FROM `rentals` JOIN `cars` ON `rentals`.`car_id`=`cars`.`id` JOIN `customers` ON `rentals`.`customer_id`=`customers`.`id` ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`,`no_of_days`, `from_date`, `rent`, `model`, `number`, `fname`, `lname`, `customers`.`email` AS email FROM `rentals` JOIN `cars` ON `rentals`.`car_id`=`cars`.`id` JOIN `customers` ON `rentals`.`customer_id`=`customers`.`id` ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`,`no_of_days`, `from_date`, `rent`, `model`, `number`, `fname`, `lname`, `customers`.`email` AS email FROM `rentals` JOIN `cars` ON `rentals`.`car_id`=`cars`.`id` JOIN `customers` ON `rentals`.`customer_id`=`customers`.`id` ')
+ 4 APPPATH\Controllers\Agency.php(156): CodeIgniter\Database\BaseConnection->query('SELECT `id`,`no_of_days`, `from_date`, `rent`, `model`, `number`, `fname`, `lname`, `customers`.`email` AS email FROM `rentals` JOIN `cars` ON `rentals`.`car_id`=`cars`.`id` JOIN `customers` ON `rentals`.`customer_id`=`customers`.`id` ')
+ 5 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Agency->bookings()
+ 6 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-10 02:43:06 --> Cannot use object of type App\Models\AgencyModel as array
+in APPPATH\Views\pages\users\agency\profile.php on line 11.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/users/agency/profile', [], true)
+ 4 APPPATH\Controllers\Agency.php(174): view('pages/users/agency/profile', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Agency->profile()
+ 6 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-10 02:45:03 --> Cannot use object of type stdClass as array
+in APPPATH\Views\pages\users\agency\profile.php on line 11.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/users/agency/profile', [], true)
+ 4 APPPATH\Controllers\Agency.php(174): view('pages/users/agency/profile', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Agency->profile()
+ 6 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-10 02:45:26 --> Undefined array key "name"
+in APPPATH\Views\pages\users\agency\profile.php on line 11.
+ 1 APPPATH\Views\pages\users\agency\profile.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'APPPATH\\Views\\pages\\users\\agency\\profile.php', 11)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\users\\agency\\profile.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/users/agency/profile', [], true)
+ 5 APPPATH\Controllers\Agency.php(174): view('pages/users/agency/profile', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Agency->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-10 02:45:47 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::getFirst()
+in APPPATH\Controllers\Agency.php on line 167.
+ 1 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Agency->profile()
+ 2 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-10 02:48:08 --> Cannot use object of type stdClass as array
+in APPPATH\Views\pages\users\agency\profile.php on line 11.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/users/agency/profile', [], true)
+ 4 APPPATH\Controllers\Agency.php(174): view('pages/users/agency/profile', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Agency->profile()
+ 6 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+ 7 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-10 04:47:20 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\Home.php on line 34.
+ 1 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Home->index()
+ 2 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-10 04:48:27 --> A non-numeric value encountered
+in APPPATH\Controllers\Home.php on line 60.
+ 1 APPPATH\Controllers\Home.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'A non-numeric value encountered', 'APPPATH\\Controllers\\Home.php', 60)
+ 2 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-10 05:29:07 --> mysqli_sql_exception: Table 'carrental.invoice' doesn't exist in C:\xampp\htdocs\carrental\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\xampp\htdocs\carrental\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `status`...', 0)
+#1 C:\xampp\htdocs\carrental\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `status`...')
+#2 C:\xampp\htdocs\carrental\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `status`...')
+#3 C:\xampp\htdocs\carrental\app\Views\pages\users\agency\bookings.php(38): CodeIgniter\Database\BaseConnection->query('SELECT `status`...')
+#4 C:\xampp\htdocs\carrental\system\View\View.php(213): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\carrental\system\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#6 C:\xampp\htdocs\carrental\system\Common.php(1135): CodeIgniter\View\View->render('pages/users/age...', Array, true)
+#7 C:\xampp\htdocs\carrental\app\Controllers\Agency.php(163): view('pages/users/age...', Array)
+#8 C:\xampp\htdocs\carrental\system\CodeIgniter.php(925): App\Controllers\Agency->bookings()
+#9 C:\xampp\htdocs\carrental\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+#10 C:\xampp\htdocs\carrental\system\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\carrental\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-01-10 05:29:07 --> Table 'carrental.invoice' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `status` FROM `invoice` WHERE `rental_id`=5', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `status` FROM `invoice` WHERE `rental_id`=5')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `status` FROM `invoice` WHERE `rental_id`=5')
+ 4 APPPATH\Views\pages\users\agency\bookings.php(38): CodeIgniter\Database\BaseConnection->query('SELECT `status` FROM `invoice` WHERE `rental_id`=5')
+ 5 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\users\\agency\\bookings.php')
+ 6 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/users/agency/bookings', [], true)
+ 8 APPPATH\Controllers\Agency.php(163): view('pages/users/agency/bookings', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Agency->bookings()
+10 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+11 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-10 07:44:50 --> Undefined array key "startdate"
+in APPPATH\Controllers\Home.php on line 59.
+ 1 APPPATH\Controllers\Home.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "startdate"', 'APPPATH\\Controllers\\Home.php', 59)
+ 2 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-10 07:46:42 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Home.php on line 59.
+ 1 APPPATH\Controllers\Home.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Home.php', 59)
+ 2 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-10 08:05:15 --> Undefined array key "hiredBy"
+in APPPATH\Views\pages\users\agency\viewcars.php on line 48.
+ 1 APPPATH\Views\pages\users\agency\viewcars.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "hiredBy"', 'APPPATH\\Views\\pages\\users\\agency\\viewcars.php', 48)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\users\\agency\\viewcars.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('pages/users/agency/viewcars', [], true)
+ 5 APPPATH\Controllers\Agency.php(156): view('pages/users/agency/viewcars', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Agency->viewCars()
+ 7 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Agency))
+ 8 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

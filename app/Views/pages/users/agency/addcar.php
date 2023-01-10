@@ -4,10 +4,10 @@
 
 <div class="col-10 col-sm-6 col-lg-4 border border-dark bg-white p-3 rounded-3">
     <h2 class="text-center mb-3">Add Car</h2>
-    <?php if(session()->get('reg_success')):?>
+    <?php if(session()->get('car_added')):?>
         <div class="alert alert-success alert-dismissible fade show p-0 m-0" role="alert">
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                <p class="text-center p-0 m-0">
+                <p class="text-center">
                     Car details added successfully!!!</p>
         </div>
         <?php endif?>

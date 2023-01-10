@@ -35,21 +35,26 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->match(['get','post'],'/', 'Home::index');
 $routes->get('about/', 'About::index');
 $routes->get('logout/', 'User::logout');
 $routes->group('customer',static function ($routes){
-    $routes->get('/', 'Home::index');
+    $routes->match(['get','post'],'/', 'Home::index');
     $routes->match(['get','post'],'signup/', 'Customer::signup');
+    $routes->get('profile/', 'Customer::profile');
 });
 $routes->group('agency',static function ($routes){
-    $routes->get('/', 'Home::index');
+    $routes->match(['get','post'],'/', 'Home::index');
+    $routes->get('viewcars/', 'Agency::viewCars');
+    $routes->get('bookings/', 'Agency::bookings');
+    $routes->get('profile/', 'Agency::profile');
     $routes->match(['get','post'],'addcar/', 'Agency::addCar');
     $routes->match(['get','post'],'signup/', 'Agency::signup');
 });
 // $routes-addRedirect>get('login/', 'Login::index');
 $routes->match(['get','post'],'login/','User::login');
 $routes->match(['get','post'],'signup/','User::signup');
+$routes->match(['get','post'],'bookcar/','User::bookCar');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

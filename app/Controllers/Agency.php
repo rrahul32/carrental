@@ -9,6 +9,8 @@ class Agency extends BaseController
 {
     public function addCar()
     {
+        if(session()->get('type')!='agency')
+        return redirect()->to('/');
         helper('form');
         $data=[
             'page_title'=>'Add Car',
@@ -26,7 +28,8 @@ class Agency extends BaseController
                     'rules'=>'required|regex_match[/^[A-Z]{2}[0-9]{2}[A-Z]{1}[0-9]{1,4}/]|is_unique[cars.number]',
                     'label' => 'Number',
                     'errors' => [
-                        'regex_match'=>'The Number field should be in the format: AB01C2345 '
+                        'regex_match'=>'The Number field should be in the format: AB01C2345 ',
+                        'is_unique'=>'This car is already registered.'
                     ]
                 ],
                 'capacity'=>[
@@ -47,17 +50,17 @@ class Agency extends BaseController
             else
             {
                 $model = new CarModel();
+                $session = session();
                 $userData = [
                     'model' => $this->request->getVar('model'),
                     'number' => $this->request->getVar('number'),
                     'capacity' => $this->request->getVar('capacity'),
-                    'rate' => $this->request->getVar('rate'),
-                    'agency_id' => $_SESSION['id']
+                    'rent_per_day' => $this->request->getVar('rate'),
+                    'agency_id' => $session->get('id')
                 ];
-
                 $model->save($userData);
-                $session = session();
                 $session->setFlashdata('car_added', true);
+                return redirect()->to('/agency/addcar');
             }
         }
 
@@ -66,8 +69,8 @@ class Agency extends BaseController
 
     public function signup()
     {
-        if(session()->get('isLoggedIn'))
-        return redirect()->to(session()->get('type').'/dashboard');
+        if(session()->get('isLogtypeedIn'))
+        return redirect()->to(session()->get('type').'/');
 
         helper('form');
         $cities= db_connect()->table('rental_cities')->select('city')->get()->getResultArray();
@@ -131,5 +134,46 @@ class Agency extends BaseController
 
 
         return view('pages/users/agency/signup',$data);
+    }
+
+    public function viewCars(){
+        if(session()->get('type')!='agency')
+        return redirect()->to('/');
+        $model=new CarModel();
+        $allCars=$model->where('agency_id',session()->get('id'))->get()->getResultArray();
+        $data=[
+            'page_title'=>'My Cars',
+            'page'=>'my cars',
+            'allCars'=> $allCars,
+
+        ];
+
+        return view('pages/users/agency/viewcars',$data);
+    }
+
+    public function bookings(){
+        if(session()->get('type')!='agency')
+        return redirect()->to('/');
+        $bookings=db_connect()->query("SELECT `rentals`.`id` AS id,`no_of_days`, `from_date`, `rent`, `model`, `number`, `fname`, `lname`, `customers`.`email` AS email FROM `rentals` JOIN `cars` ON `rentals`.`car_id`=`cars`.`id` JOIN `customers` ON `rentals`.`customer_id`=`customers`.`id` ")->getResultArray();
+        $data=[
+            'page_title'=>'Bookings',
+            'page'=>'bookings',
+            'bookings'=> $bookings,
+        ];
+
+        return view('pages/users/agency/bookings',$data);
+    }
+    public function profile(){
+        if(session()->get('type')!='agency')
+        return redirect()->to('/');
+        $model = new AgencyModel();
+        $profile = $model->where('id',session()->get('id'))->first();
+        $data=[
+            'page_title'=>'Profile',
+            'page'=>'profile',
+            'profile'=> $profile,
+        ];
+
+        return view('pages/users/agency/profile',$data);
     }
 }

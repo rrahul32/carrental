@@ -6,14 +6,18 @@ use App\Models\CustomerModel;
 
 class Customer extends BaseController
 {
-    public function dashboard()
+    public function profile()
     {
+        if(session()->get('type')!='customer')
+        return redirect()->to('/');
+        $model = new CustomerModel();
+        $profile = $model->where('id',session()->get('id'))->first();
         $data=[
-            'page_title'=>'Customer Dashboard',
-            'page'=>'dashboard'
+            'page_title'=>'Profile',
+            'page'=>'profile',
+            'profile'=>$profile
         ];
-
-        return view('pages/users/customer/dashboard',$data);
+        return view('pages/users/customer/profile',$data);
     }
 
     public function signup()

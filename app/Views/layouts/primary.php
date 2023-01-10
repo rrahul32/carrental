@@ -20,6 +20,10 @@
     background-image: linear-gradient(45deg, #6f42c1, #af4261);
     background-clip: text;
 }
+
+.hide{
+    display:none;
+}
     </style>
 
     <!-- Bootstrap CSS -->

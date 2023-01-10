@@ -11,7 +11,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link <?= $page == "home" ? "active" : "" ?>" aria-current="page" href="/carrental">Home</a>
+                    <a class="nav-link <?= $page == "home" ? "active" : "" ?>" aria-current="page" href="/carrental">Available Cars</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link <?= $page == "login" ? "active" : "" ?>" href="/carrental/login">Login</a>

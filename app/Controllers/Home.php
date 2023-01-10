@@ -2,21 +2,16 @@
 
 namespace App\Controllers;
 
+use App\Models\CarModel;
+use App\Models\RentalModel;
+
 class Home extends BaseController
 {
     public function index()
     {
-        helper('form');
-        $cities = db_connect()->table('rental_cities')->select('city')->get()->getResultArray();
-        $city_list = [];
-        foreach ($cities as $city) {
-            $city_list[] = $city['city'];
-        }
-
         $data = [
             'page_title' => 'Home',
             'page' => 'home',
-            'cities' => $city_list,
         ];
 
         if (session()->get('isLoggedIn'))
@@ -24,28 +19,87 @@ class Home extends BaseController
         else
             $data['layout'] = 'nologin';
 
-        if (isset($_GET['search'])) {
-            $rules = [
-                'city' => [
-                    'rules' => 'required|in_list[' . implode(",", $city_list) . ']',
-                    'lablel' => 'City',
-                    'errors' => [
-                        'in_list' => 'Please select a city from the list'
-                    ]
-                ],
-            ];
+        if ($this->request->getMethod() == 'post') {
+            if (session()->get('type') == 'agency')
+                return redirect()->to('/');
+            else if (session()->get('type') == 'customer') {
+                helper('form');
+                $days=[];
+                for($i=1;$i<30;$i++)
+                {
+                    $days[]=$i;
+                }
+                if(isset($_POST['checkavailable']))
+                {
+                    $rules = [
+                        'startdate' => [
+                            'rules' => 'required|valid_date|validateStartDate',
+                            'label' => 'From'
+                        ],
+                        'days' => [
+                            'rules' => 'required|in_list['.implode(',',$days).']',
+                            'label' => 'No of Days'
+                        ],
+                    ];
+                    if (!$this->validate($rules))
+                        $data['validation'] = $this->validator;
+                        else {
+                            $model = new CarModel();
+                            $carsFilter = $model->where("`id` NOT IN (SELECT `car_id` FROM `rentals` WHERE DATEDIFF('" . $_POST['startdate'] . "',`from_date`)<=`no_of_days`)");
+                            $cars = $carsFilter->findAll();
+                            $data['cars'] = $cars;
+                            session()->setFlashdata('availabilityChecked',true);              
+                            session()->setFlashdata('POST_DATA',$_POST);                  
+                            return view('pages/home', $data);
+                        }
+                }
+                else
+                {
+                    $carIds=[];
+                    foreach(db_connect()->query("SELECT `id` FROM `cars` WHERE `id` NOT IN (SELECT `car_id` FROM `rentals` WHERE DATEDIFF('".session()->get('POST_DATA')['startdate']."',`from_date`)<=`no_of_days`)")->getResultArray() as $id)
+                    $carIds[]=$id['id'];
+                    $rules=[
+                        'startdate' => [
+                            'rules' => 'required|valid_date|validateStartDate',
+                            'label' => 'From'
+                        ],
+                        'days' => [
+                            'rules' => 'required|in_list['.implode(',',$days).']',
+                            'label' => 'No of Days'
+                        ],
+                        'carid'=>[
+                            'rules' => 'required|in_list['.implode(',',$carIds).']',
+                            ]
+                        ];
+                        
+                        if (!$this->validate($rules))
+                        $data['validation'] = $this->validator;
+                        else {
 
-            if (!$this->validate($rules)) {
-                $data['validation'] = $this->validator;
-                if (isset($_GET['searchResults']))
-                    return view('pages/searchResults', $data);
-            } else {
-                $carQuery = isset($_GET['car']) ? "AND `model` LIKE '$_GET[car]'" : '';
-                $cars = db_connect()->query("SELECT `model`,`capacity`, `rent_per_day` FROM `cars` WHERE `agency_id` IN (SELECT `id` FROM `agencies` WHERE `city`='$_GET[city]')$carQuery")->getResultArray();
-                $data['cars'] = $cars;
-                return view('pages/searchResults', $data);
+                            $rentalData = [
+                                'car_id'=> $this->request->getVar('carid'),
+                                'customer_id'=> session()->get('id'),
+                                'no_of_days'=> $this->request->getVar('days'),
+                                'from_date'=> $this->request->getVar('startdate'),
+                            ];
+                            $rate_per_day=db_connect()->query('SELECT rent_per_day FROM cars WHERE id='.$rentalData['car_id'].'')->getRowArray()['rent_per_day'];
+                            $rent=((float)$rate_per_day) * ((int)$rentalData['no_of_days']);
+                            $rentalData['rent']=$rent;
+                            $model=new RentalModel();
+                            $model->save($rentalData);
+                            session()->setFlashdata('Booked',true);
+                            return redirect()->to('/');
+                        }
+                    }
+            } 
+            else{
+                session()->setFlashdata('message','Please login as Customer to rent car.');
+                return redirect()->to('login/');
             }
         }
+        $model = new CarModel();
+        $cars = $model->findAll();
+        $data['cars'] = $cars;
         return view('pages/home', $data);
     }
 }
