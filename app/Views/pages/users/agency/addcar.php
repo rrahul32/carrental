@@ -11,7 +11,7 @@
                     Car details added successfully!!!</p>
         </div>
         <?php endif?>
-    <form action="/carrental/agency/addcar" method="post">
+    <form action="/agency/addcar" method="post">
         <div class="form-floating mb-3">
             <input type="text" name="model" class="form-control" id="floatingModel" placeholder="name" value="<?= set_value('model') ?>">
             <label for="floatingModel">Model</label>

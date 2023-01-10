@@ -21,7 +21,7 @@
                 </p>
         </div>
         <?php endif?>
-    <form action="/carrental/login" method="post">
+    <form action="/login" method="post">
         <div class="form-floating mb-3">
             <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com" value="<?= set_value('email') ?>">
             <label for="floatingInput">Email address</label>

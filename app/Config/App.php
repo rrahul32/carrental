@@ -24,7 +24,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $baseURL = 'https://localhost/carrental/';
+    public $baseURL = 'http://carrentalportal.rf.gd/';
 
     /**
      * --------------------------------------------------------------------------

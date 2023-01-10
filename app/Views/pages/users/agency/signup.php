@@ -4,7 +4,7 @@
 
 <div class="col-10 col-sm-6 col-lg-4 border border-dark bg-white p-3 rounded-3">
     <h2 class="text-center mb-3">Signup</h2>
-    <form action="/carrental/agency/signup" method="post">
+    <form action="/agency/signup" method="post">
         <div class="form-floating mb-3">
             <input type="text" name="name" class="form-control" id="floatingName" placeholder="name" value="<?= set_value('name') ?>">
             <label for="floatingName">Name</label>

@@ -20,7 +20,7 @@
         <?php endif ?>
     </div>
     <div class="row justify-content-center mb-3">
-        <form action="/carrental/" method="post">
+        <form action="/" method="post">
             <?php if (session('type') == 'customer') : ?>
                 <div class="col-8 mx-auto border border-dark bg-light py-3">
                     <div class="row justify-content-center align-items-center">
@@ -62,7 +62,7 @@
                         <h5 class="card-title mb-3"> <?= session()->get('availabilityChecked')?"Rent: &#8377;".((float)$car['rent_per_day'])*((int)(session()->get('POST_DATA')['days'])):"Rent per day: &#8377;$car[rent_per_day]"?></h5>
 
                         <?php if(session()->get('availabilityChecked')) : ?>
-                        <form action="/carrental/" method="post">
+                        <form action="/" method="post">
                         <input type="hidden" name="days" value="<?=session()->get('POST_DATA')['days']?>">
                         <input type="hidden" name="startdate" value="<?=session()->get('POST_DATA')['startdate']?>">
                         <input type="hidden" name="carid" value="<?=$car['id']?>">
@@ -75,7 +75,7 @@
                     <?php endif ?>
                     <?php if(!isset($_SESSION['isLogged'])):?>
                         <div class="row justify-content-center">
-                            <a href="/carrental/login" role="button" type="submit" class="btn btn-primary" onclick="return confirm('Please login as customer to rent car.')">
+                            <a href="/login" role="button" type="submit" class="btn btn-primary" onclick="return confirm('Please login as customer to rent car.')">
                                 Rent Car
                             </a>
                         </div>

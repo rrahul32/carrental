@@ -32,10 +32,10 @@ class Database extends Config
      */
     public $default = [
         'DSN'      => '',
-        'hostname' => 'localhost',
-        'username' => 'root',
-        'password' => '',
-        'database' => 'carrental',
+        'hostname' => 'sql107.epizy.com',
+        'username' => 'epiz_33357875',
+        'password' => 'eAiXtcJJGp',
+        'database' => 'epiz_33357875_carrental',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,

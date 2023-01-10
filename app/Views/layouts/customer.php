@@ -6,17 +6,17 @@
 ?>
 <nav class="navbar navbar-expand-sm navbar-dark mb-3 bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="/carrental/customer">Welcome <?= esc(session('fname')) ?> <?=esc(session('lname'))?></a>
+        <a class="navbar-brand" href="/customer">Welcome <?= esc(session('fname')) ?> <?=esc(session('lname'))?></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link <?= $page == "home" ? "active" : "" ?>" aria-current="page" href="/carrental/customer">Available Cars</a>
+                    <a class="nav-link <?= $page == "home" ? "active" : "" ?>" aria-current="page" href="/customer">Available Cars</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= $page == "about" ? "active" : "" ?>" href="/carrental/about">About</a>
+                    <a class="nav-link <?= $page == "about" ? "active" : "" ?>" href="/about">About</a>
                 </li>
             </ul>
         </div>
@@ -29,8 +29,8 @@
                         </svg>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="/carrental/customer/profile">Profile</a></li>
-                        <li><a class="dropdown-item" href="/carrental/logout">Logout</a></li>
+                        <li><a class="dropdown-item" href="/customer/profile">Profile</a></li>
+                        <li><a class="dropdown-item" href="/logout">Logout</a></li>
                     </ul>
                 </li>
             </ul>
