@@ -154,7 +154,7 @@ class Agency extends BaseController
     public function bookings(){
         if(session()->get('type')!='agency')
         return redirect()->to('/');
-        $bookings=db_connect()->query("SELECT `rentals`.`id` AS id,`no_of_days`, `from_date`, `rent`, `model`, `number`, `fname`, `lname`, `customers`.`email` AS email FROM `rentals` JOIN `cars` ON `rentals`.`car_id`=`cars`.`id` JOIN `customers` ON `rentals`.`customer_id`=`customers`.`id` ")->getResultArray();
+        $bookings=db_connect()->query("SELECT `rentals`.`id` AS id,`no_of_days`, `from_date`, `rent`, `model`, `number`, `fname`, `lname`, `customers`.`email` AS email FROM `rentals` JOIN `cars` ON `rentals`.`car_id`=`cars`.`id` JOIN `customers` ON `rentals`.`customer_id`=`customers`.`id` WHERE `cars`.`agency_id` = '$_SESSION[id]' ")->getResultArray();
         $data=[
             'page_title'=>'Bookings',
             'page'=>'bookings',
